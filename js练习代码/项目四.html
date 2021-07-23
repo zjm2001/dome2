@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    a{
+        text-decoration: none;
+        color: #ccc;
+    }
+
+    body {
+        background: url(./img/666.png)
+    }
+
+    #div01 {
+        width: 1000px;
+        height: 180px;
+        margin: 0 auto;
+        background: url(./img/shoubiaoti.png);
+    }
+
+    #div02 {
+        width: 1000px;
+        height: 90px;
+        margin: 0 auto;
+        background-color: rgba(238, 238, 238, 0.883);
+    }
+
+    #div03 {
+        width: 1000px;
+        height: 270px;
+        margin: 0 auto;
+    }
+
+    #div04 {
+        width: 300px;
+        height: 90px;
+        float: right;
+    }
+
+    #s1 {
+        font-size: 30px;
+        padding-left: 180px;
+    }
+
+    #s2 {
+        position: relative;
+        top: -150px;
+        left: 25px;
+
+    }
+
+    #img01 {
+        border-radius: 30%;
+        border: 5px solid;
+        color: rosybrown;
+
+
+    }
+
+    .sousuo {
+        width: 1000px;
+        height: 90px;
+        margin: 0 auto;
+        padding-top: 20px;
+        padding-bottom: 10px;
+        vertical-align: middle;
+
+    }
+
+    /* 下面是tab栏css样式 */
+    #div05 {
+        width: 1000px;
+        height: 50px;
+        background-color: rgb(226, 226, 226);
+        margin: auto;
+    }
+
+    #div06 {
+        margin: 0px auto;
+        width: 1000px;
+        height: 1000px;
+
+
+
+    }
+
+    #li01 {
+        list-style-type: none;
+        float: left;
+        font-size: 20px;
+        width: 60px;
+        margin: auto;
+        line-height:50px ;
+    }
+
+    .tp {
+        display: none;
+    }
+
+    .dj {
+        background-color: #c81623;
+        color: #fff;
+    }
+</style>
+
+<body>
+    <!-- 搜索框头标题导航栏 -->
+    <div style="width: 1000px;height:390px;margin: 0 auto;">
+        <div id="div03">
+            <div class="sousuo">
+                <span><img src="./img/baidu.JPG" alt="" style="vertical-align: middle;"></span>
+                <span><textarea
+                        style="width: 550px; height: 40px; resize: none; vertical-align: middle;"></textarea></span>
+                <span>
+                    <button
+                        style="height: 40px;   font-size: 18px; background-color: rgb(117, 176, 243); color: ivory; vertical-align: middle;">进入贴吧</button>
+                </span>
+                <span><button
+                        style="font-size: 18px;height: 40px;  vertical-align: middle; color: lightskyblue ; background-color: rgba(255, 255, 255, 0.123);">全吧搜索</button></span>
+                <span><a href="#" style="font-size: 15px; "> 高级搜索</a></span>
+            </div>
+            <div id="div01">
+            </div>
+            <div id="div02">
+                <span id="s1"> 猪小明的贴吧</span> &nbsp;
+                <button style="font-size: 20px; background-color: rgb(196, 39, 117); border-radius: 4%; color: ivory;">+
+                    关注</button>
+                <span style="font-size: 12px;"> 关注：9999999 &nbsp; &nbsp; 帖子：9999999</span>
+                <div id="div04">
+                    <span>
+                        <button
+                            style="font-size: 35px; background-color: rgb(70, 188, 235); border-radius: 4%; color: ivory; margin-top: 15px;">签到</button>
+                        <div
+                            style="float: right;width: 90px; height: 50px;background-color: rgb(228, 228, 228); margin-top: 17px;margin-right: 117px;">
+                            12月12日<br>漏签0天</div>
+                    </span>
+                </div>
+                <br>
+                <span style="padding-left: 180px;">猪小明文化及起衍生内容交流平台</span>
+                <span style="padding-left: 20px; font-size: 12px;">目录：<a href="#"
+                        style="text-decoration: none;">动漫相关</a></span>
+            </div>
+            <span id="s2"><img src="./img/111.jpeg" alt="" width="130px" height="130px" id="img01"></span>
+        </div>
+    </div>
+    <!-- 现在tab栏注释 -->
+    <div id="div06">
+        <div id="div05" class="list">
+            <ul>
+                <li id="li01" class="dj">看帖</li>
+                <li id="li01">图片</li>
+                <li id="li01">精品</li>
+                <li id="li01">视频 </li>
+            </ul>
+        </div>
+        <div>
+            <div class="tp" style="display: block;"> <img src="./img/看帖.JPG" alt=""></div>
+            <div class="tp"><img src="./img/图片.JPG" alt=""></div>
+            <div class="tp"><img src="./img/精品.JPG" alt=""></div>
+            <div class="tp"><img src="./img/视频.JPG" alt=""></div>
+        </div>
+    </div>
+    <script>
+        // 获取ul中所有li
+        // var list = document.querySelector('.list');
+        var lis = document.querySelectorAll('li');
+        var tps = document.querySelectorAll('.tp');
+        console.log(lis);
+        for (var i = 0; i < lis.length; i++) {
+            lis[i].setAttribute('index', i)
+            lis[i].onclick = function () {
+                for (var i = 0; i < lis.length; i++) {
+                    lis[i].className = '';
+                }
+                this.className = 'dj';
+                var index = this.getAttribute('index');
+                for (var i = 0; i < tps.length; i++) {
+                    tps[i].style.display = "none"
+                }
+                tps[index].style.display = 'block';
+            }
+        }
+    </script>
+</body>
+
+</html>

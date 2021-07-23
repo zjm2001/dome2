@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+.main{
+    position: relative;
+    overflow: hidden;
+    margin: 300px auto;
+    width: 600px;
+    height: 400px;
+}
+.box{
+    position: absolute;
+    left:0;
+    width:3000px ;
+    height: 400px;
+    transition: all .5s;
+}
+
+img{
+    float: left;
+    width: 600px;
+    height: 400px;
+}
+</style>
+<body>
+    <div class="main">
+    <div class="box">
+        <img src="./img/tp1.jpg" alt="">
+        <img src="./img/tp2.jpg" alt="">
+        <img src="./img/tp3.jpg" alt="">
+        <img src="./img/tp4.jpg" alt="">
+        <img src="./img/tp5.jpg" alt="">
+    </div>
+</div>
+</body>
+<script>
+    var  box= document.querySelector('.box');
+    var i=0;
+    var  time =setInterval(function(){  
+        
+    },2000)
+    
+</script>
+</html>

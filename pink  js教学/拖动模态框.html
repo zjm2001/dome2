@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+
+    }
+
+    a {
+        text-decoration: none;
+        color: rgb(112, 109, 109);
+    }
+
+    h1 {
+        text-align: center;
+        font-weight: 400;
+    }
+
+    .login-bg {
+        position: absolute;
+        display: none;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(138, 135, 135, 0.383);
+    }
+
+    .login {
+        display: none;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 600px;
+        height: 400px;
+        background-color: rgb(255, 255, 255);
+    }
+
+    .dl {
+        cursor: move;
+        width: 100%;
+        height: 60px;
+    }
+
+    .dl p {
+        float: left;
+        line-height: 60px;
+        font-size: 30px;
+        padding: 0 10px;
+    }
+
+    .delete {
+        display: block;
+        float: right;
+        line-height: 60px;
+        padding: 10px 10px;
+    }
+
+    .main {
+        width: 100%;
+        height: 200px;
+        margin-top: 50px;
+    }
+
+    .main p {
+        text-align: right;
+        width: 100%;
+        height: 60px;
+        font-size: 20px;
+    }
+
+    .main input {
+        width: 60%;
+        font-size: 20px;
+        margin-right: 85px;
+    }
+
+    button {
+        width: 60px;
+        height: 30px;
+        line-height: 30px;
+        border-radius: 10px;
+        border: 0;
+        background-color: rgb(26, 170, 236);
+        text-align: center;
+        margin: 0 280px;
+    }
+</style>
+
+<body>
+
+    <div class="login-bg"> </div>
+    <h1><a href="javascript:;">点击登录</a></h1>
+    <div class="login">
+        <div class="dl">
+            <p>登录会员</p>
+            <span class="delete"><svg t="1622684258409" class="icon" viewBox="0 0 1029 1024" version="1.1"
+                    xmlns="http://www.w3.org/2000/svg" p-id="2363" width="32" height="32">
+                    <path
+                        d="M84.917488 1017.691102a84.422555 84.422555 0 0 1-59.940014-24.48254 84.422555 84.422555 0 0 1 0-119.880028L389.68291 511.155774 31.731279 148.138789A84.422555 84.422555 0 1 1 151.611306 29.947213L507.030261 389.587296 869.203021 29.102987a84.422555 84.422555 0 1 1 119.880028 119.880028L627.754515 511.155774l361.328534 364.705437a84.422555 84.422555 0 1 1-119.880028 118.191576L507.030261 629.347351l-362.172759 363.861211A84.422555 84.422555 0 0 1 84.917488 1017.691102z"
+                        fill="#383B48" p-id="2364"></path>
+                </svg></span>
+        </div>
+        <div class="main">
+            <p> 用户名:<input type="text" placeholder="请输入用户名"></p>
+            <p> 密码:<input type="password" placeholder="请输入密码"></p>
+            <button>登录</button>
+        </div>
+    </div>
+    <script>
+        var a = document.querySelector('a');
+        var login_bg = document.querySelector('.login-bg');
+        var login = document.querySelector('.login');
+        var btn = document.querySelector('.delete');
+        var dl = document.querySelector('.dl');
+        // console.log(a);
+        // console.log(login);
+        // console.log(login_bg);
+        a.addEventListener('click', function () {
+            login_bg.style.display = 'block';
+            login.style.display = "block";
+        })
+        btn.addEventListener('click', function () {
+            login_bg.style.display = 'none';
+            login.style.display = "none";
+        })
+        dl.addEventListener('mousedown', function (e) {
+            var x = e.pageX - login.offsetLeft;
+            var y = e.pageY - login.offsetTop;
+            // console.log(x);
+            // console.log(y);
+            document.addEventListener('mousemove',move)
+            function move (e) {
+                login.style.left = e.pageX - x + "px";
+                login.style.top = e.pageY - y + "px";
+            }
+            document.addEventListener('mouseup',function(){
+                document.removeEventListener('mousemove',move)
+            })
+        })
+    </script>
+</body>
+
+</html>

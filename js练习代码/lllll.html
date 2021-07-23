@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var i,j,k;
+        for (i = 0; i <= 10; i++){
+            for (j = 10 - i; j >= 0; j--) {
+                for (k = 10 - i - j; k >= 0; k--) {
+                    if ((i * 1 + j * 2 + k * 5 == 18) && (i + j + k == 10)) {
+                        document.writeln("一元的：" + i + "张，" + "二元的：" + j + "张，" + "五元的" + k + "张<br />");
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

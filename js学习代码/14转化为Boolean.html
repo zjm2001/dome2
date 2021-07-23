@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      /*
+      将其他数据类型转化为Boolean
+      -使用Boolea()函数
+
+      数字转布尔
+      除了0和infinity其他都是true
+      字符串转布尔
+      -除了空串其余都是ture
+      null和undefined都会转化为false
+      对象也会转化为true
+      */   
+      var a = 123;//true
+      a =-123;//trua 
+      a= 0;//false
+      a= Infinity;//true
+      a= NaN;//false
+     a =Boolean(a);
+
+
+      console.log(typeof a);
+      console.log(a);
+
+    </script>
+</body>
+</html>

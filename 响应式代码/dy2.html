@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .box {
+        position: relative;
+        width: 500px;
+        height: 40px;
+        margin: 100px auto;
+        border-bottom: 1px solid black;
+    }
+
+    input {
+        outline: none;
+        width: 450px;
+        height: 15px;
+        border: 0;
+    }
+
+    span {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 24px;
+        height: 24px;
+    }
+
+    span img {
+        width: 100%;
+        height: 100%;
+    }
+</style>
+
+<body>
+    <div class="box">
+        密 码: <input type="password" name="dddd" id="dd">
+        <span><img src="img/open.png" alt=""></span>
+    </div>
+    <script>
+        var ipt = document.querySelector("input")
+        var spans = document.querySelector("span");
+        var img = document.querySelector("img");
+        var k = 1;
+        spans.addEventListener("click", function () {
+            if (k == 1) {
+                img.src = "img/close.png";
+                ipt.type = "text";
+                k = 0;
+            } else {
+                img.src = "img/open.png";
+                ipt.type = "password";
+                k=1;
+            }
+        })
+
+    </script>
+</body>
+
+</html>

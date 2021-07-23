@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    td,
+    th {
+        width: 200px;
+        height: 40px;
+        text-align: center;
+        
+    }
+    table tr:nth-child(1){
+        background-color: pink;
+    }
+</style>
+
+<body>
+    <table  cellspacing=0>
+        <tr>
+            <td>序号</td>
+            <td>姓名</td>
+            <td>响应式网页成绩</td>
+        </tr>
+
+
+        <tr>
+            <td>1</td>
+            <td>李四</td>
+            <td>202</td>
+        </tr>
+
+        <tr>
+            <td>2</td>
+            <td>弟弟</td>
+            <td>202</td>
+        </tr>
+
+        <tr>
+            <td>3</td>
+            <td>帅哥</td>
+            <td>202</td>
+        </tr>
+
+        <tr>
+            <td>4</td>
+            <td>傻子</td>
+            <td>250</td>
+        </tr>
+    </table>
+</body>
+<script>
+var trs=document.querySelectorAll("tr");
+console.log(trs);
+for(var i=1;i<trs.length;i++){
+    if(i%2==0){
+        trs[i].style.backgroundColor='red';
+    }
+    else{
+
+    }
+}
+</script>
+</html>

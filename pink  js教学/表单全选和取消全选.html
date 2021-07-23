@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    table {
+        margin: 100px auto;
+        border-collapse: collapse
+    }
+
+    td,
+    th {
+        padding: 10px 20px;
+        border: 1px solid #ccc;
+    }
+
+    thead {
+        background-color: rgb(66, 191, 223);
+    }
+</style>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th><input type="checkbox" name="" id="Select-all"></th>
+                <th>商品</th>
+                <th>价格</th>
+            </tr>
+        </thead>
+        <tbody class="choice">
+            <tr>
+                <td><input type="checkbox" name="" id=""></td>
+                <td>小米10Pro</td>
+                <td>4900</td>
+
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="" id=""></td>
+                <td>小米10</td>
+                <td>2999</td>
+
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="" id=""></td>
+                <td>小米6</td>
+                <td>1999</td>
+
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="" id=""></td>
+                <td>小米11</td>
+                <td>3999</td>
+
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        var all = document.getElementById('Select-all');
+        var choice = document.querySelector('.choice').querySelectorAll('input');
+        // console.log(choice);
+        all.onclick = function () {
+            // console.log(this.checked);
+            for (var i = 0; i < choice.length; i++) {
+                choice[i].checked = this.checked
+            }
+        }
+        for (var i = 0; i < choice.length; i++) {
+             choice[i].onclick=function(){
+                 var k=true;
+                 for (var i = 0; i < choice.length; i++){
+                     if(!choice[i].checked){
+                         k=false
+                         break;
+                     }
+                 }
+                 all.checked=k;
+             }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .box {
+        width: 800px;
+        height: 500px;
+        margin: 100px auto;
+        text-align: center;
+    }
+
+    b {
+        font-size: 30px;
+    }
+    p{
+        text-align: center;
+        font-size: 30px;
+    }
+
+    span {
+        display: inline-block;
+        width: 200px;
+        height: 200px;
+        background-color: pink;
+        text-align: center;
+        line-height: 200px;
+        font-size: 30px;
+
+    }
+</style>
+
+<body>
+    <div class="box">
+        <p></p>
+        <span>0</span>
+        <b>:</b>
+        <span>0</span>
+        <b>:</b>
+        <span>0</span>
+    </div>
+    <script>
+        var spans = document.querySelectorAll('span');
+        var ps =document.querySelector("p");
+        console.log(spans);
+        fn();
+        setInterval(fn, 1000);
+        function fn() {
+            var dt1 = new Date("2021-04-15 18:30:00").getTime();
+            //  console.log(typeof(dt1))
+            var time = new Date().getTime();
+            //  console.log(typeof(time))
+            var ms = (dt1 - time)/1000;
+            var day = parseInt(ms / (24 * 60 * 60));//计算整数天数
+            var afterDay = ms - day * 24 * 60 * 60;//取得算出天数后剩余的秒数
+            var hour = parseInt(afterDay / (60 * 60));//计算整数小时数
+            var afterHour = ms - day * 24 * 60 * 60 - hour * 60 * 60;//取得算出小时数后剩余的秒数
+            var min = parseInt(afterHour / 60);//计算整数分
+            var afterMin = parseInt(ms - day * 24 * 60 * 60 - hour * 60 * 60 - min * 60);//取得算出分后剩余的秒数
+            ps.innerHTML="距离还有2021年4月15日18:30:00秒杀还有"+day+"天";
+             spans[0].innerHTML=hour;
+             spans[1].innerHTML=min;
+             spans[2].innerHTML=afterMin;
+
+        }
+    </script>
+</body>
+
+</html>

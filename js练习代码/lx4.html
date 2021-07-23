@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <script>
+      function Collectstr(str ){
+        var   s = new  String (str) ,result="",ch ,i;
+      for(i=0;i<s .lenght ;i++){
+          ch =s . charAt(i);
+          if ((ch >="a"&& ch <="z")||(ch >="A"&& ch <="Z")){
+              result+=ch ;
+          }
+      }
+       return result;           
+      }
+   var s;
+   s= prompt(",,,,");
+   var str  = Collectstr(s) ;
+   upstr = str.toUpperCase();
+   for ( var  i =upstr.lenght-1;i>=0;i--){
+       document.write(upstr.charAt(i));
+   }
+    
+      
+
+  </script>
+</body>
+</html>

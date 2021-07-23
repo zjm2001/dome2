@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div{
+        width: 400px;
+        height: 50px;
+        margin: 100px auto;
+    }
+.ipt{
+    height: 30px;
+    width: 200px;
+    padding: 0 10px;
+}
+.tips{
+    font-size:18px ;
+    display: inline-block;
+    color: cornflowerblue;
+}
+
+</style>
+<body>
+    <div>
+        <input type="text" class="ipt">
+        <p class="tips">请输入6到16位</p>
+    </div>
+    <script>
+    var ipt=document.querySelector(".ipt");
+    var p=document.querySelector('.tips');
+     ipt.onblur=function(){
+         if(this.value.length<6 || this.value.length>16){
+            p.style.color='red'
+            p.innerHTML='6到16'
+         }else{
+            p.style.color='pink'
+            p.innerHTML='正确'
+         }
+     }
+</script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+</style>
+<body>
+    密码:<input type="password" value=""><span>请输入6到16位密码</span>
+    <script>
+        var input=document.querySelector("input");
+        var span =document.querySelector("span");
+        console.log(input);
+        console.log(span);
+        input.addEventListener('blur',function(){
+        if(input.value.length>=6&&input.value.length<=16){
+            span.style.color="pink"
+            span.innerHTML="成功"
+        }else{
+            span.style.color="red"
+            span.innerHTML="失败"
+        }
+        })
+        input.addEventListener('focus',function(){
+            span.innerHTML="请输入6到16位密码";
+            span.style.color='black'
+        })
+    </script>
+</body>
+</html>

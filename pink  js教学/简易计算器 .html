@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简易计算器</title>
+</head>
+<body>
+    <script>
+        var p=prompt('输入1为加,2为减,3为乘,4为除,5为退出');
+        var  sum;
+        if(p==1){
+            var num1=prompt('第一个数;')
+            var num2=prompt('第二个数;')
+            sum=(num1-0)+(num2-0);
+        }else if(p==2){
+            var num1=prompt('第一个数;')
+        var num2=prompt('第二个数;')
+            sum=num1-num2;
+        }else if(p==4){
+            if(num2==0){
+                alert('除数不能为零')
+            }else{ 
+                var num1=prompt('第一个数;')
+        var num2=prompt('第二个数;')
+                sum=num1/num2
+            }     
+        }else if(p==3){
+            var num1=prompt('第一个数;')
+        var num2=prompt('第二个数;')
+            sum=num*num2;
+        }else if(p==5){
+             
+        }
+
+        console.log(sum);
+    </script>
+</body>
+</html>

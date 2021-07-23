@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // if(true){
+        //     let a =20;
+        //     console.log(a);//20
+        // }
+        // // console.log(a);//无法找到
+        // // const b;//错误应该赋值
+        // const b=20;
+        // // b=30;//错误赋值不能更改值
+        // const arr =[20,30];
+        // arr[0]=30;
+        // arr[1]=20;//这种直接改变地址可以
+        // console.log(arr);
+        // // 对象解构
+        let son={
+            name:"zjm",
+            age:20,
+            sex:'男'
+        }
+        let{name,sex,age}=son;
+        console.log(name);
+        console.log(sex);
+        console.log(age);
+        let[a,b,c]=[1,2,3]//多赋值就输出undefined
+        console.log(a+b+c);
+    </script>
+</body>
+</html>

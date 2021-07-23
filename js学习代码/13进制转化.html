@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+    在js中，需要表示16进制数字，则需要0x开头
+  八进制数字，则需要以0开头
+        */
+        a =0x10;//16进制
+        a = 070;//8进制
+        //这种070字符串有浏览器当8进制有的会当10进制
+        a="070";
+        a=parseInt(a);
+        //a= parseInt(a,10);
+        console.log(typeof a);
+        console.log(a);
+    </script>
+</body>
+</html>

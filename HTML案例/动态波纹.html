@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .beij {
+        position: relative;
+        width: 500px;
+        height: 500px;
+        margin: 0 auto;
+        background: url(img/地图.jpg) no-repeat;
+    }
+
+    .yuandian {
+        position: absolute;
+        top: 282px;
+        left: 354px;
+        width: 8px;
+        height: 8px;
+    }
+
+    .yuan {
+        width: 8px;
+        height: 8px;
+        background-color: rgba(255, 0, 0, 0.753);
+        border-radius: 50%;
+    }
+
+    .yuandian div[class^='pic'] {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        box-shadow: 0 0 12px rgba(255, 0, 0, 0.5);
+        animation: bianda 1.2s linear infinite;
+    }
+/* .pic2{
+    animation-delay: 0.4s !important;
+}
+.pic2{
+    animation-delay: 0.8s !important;
+} */
+
+
+.beij .yuandian .pic2{
+    animation-delay: 0.4s;
+}
+.beij .yuandian .pic3{
+    animation-delay: 0.8s;
+}
+    @keyframes bianda {
+        0% {}
+
+        70% {
+            width: 40px;
+            height: 40px;
+            opacity: 1;
+        }
+
+        100% {
+            width: 70px;
+            height: 70px;
+            opacity: 0;
+        }
+    }
+</style>
+
+<body>
+    <div class="beij">
+        <div class="yuandian">
+            <div class="yuan"></div>
+            <div class="pic1"></div>
+            <div class="pic2"></div>
+            <div class="pic3"></div>
+        </div>
+        
+    </div>
+</body>
+
+</html>

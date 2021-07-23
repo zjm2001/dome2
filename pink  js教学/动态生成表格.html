@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    table{
+        border: 1px solid black;
+        margin:100px auto;
+       
+    }
+
+    th{
+        background-color: pink;
+    }
+    th,td{
+        text-align: center;
+         border: 1px solid black;
+       padding: 0 30px;
+    }
+       tr td:nth-child(2){
+           padding: 0 100px;
+       }
+</style>
+<body>
+    <table cellspacing=0;>
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>科目</th>
+                <th>成绩</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    <script>
+        var datas=[
+            {
+                name:'张三',
+                sub:'js',
+                score:'90'
+            },
+            {
+                name:'李四',
+                sub:'js',
+                score:'90'
+            },
+            {
+                name:'王五',
+                sub:'js',
+                score:'90'
+            },
+            {
+                name:'沙雕',
+                sub:'js',
+                score:'90'
+            },
+            {
+                name:'沙雕',
+                sub:'js',
+                score:'90'
+            },
+            {
+                name:'沙雕',
+                sub:'dasdad',
+                score:'90'
+            },
+               {
+                name:'沙雕',
+                sub:'cccccadjkadhjsa',
+                score:'90'
+            }
+        ];
+        var table =document.querySelector('table');
+        for(var i=0;i<datas.length;i++){
+            var tr=document.createElement('tr');
+            table.appendChild(tr);
+            for(k in datas[i]){
+                var td= document.createElement('td')
+                tr.appendChild(td);
+                td.innerHTML=datas[i][k]
+            }
+            var td =document.createElement('td');
+            td.innerHTML='<a href="javaScript:;">删除</a>';
+          tr.appendChild(td);
+        }
+        var as =document.querySelectorAll('a');
+        for(var i=0;i<as.length;i++){
+            as[i].onclick=function(){
+                table.removeChild(this.parentNode.parentNode);
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+=<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lianxi</title>
+</head>
+<style>
+    .box {
+        width: 400px;
+        height: 200px;
+        background-color: pink;
+        margin: 0px auto;
+        box-sizing: border-box;
+    }
+
+    @media screen and (max-width:600px) {
+        body {
+            background-color: yellow;
+        }
+
+    }
+
+    @media screen and (min-width:800px) {
+        .box {
+            border-radius: 50%;
+            border: 1px solid blue;
+        }
+
+        div:hover {
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, .3);
+        }
+    }
+</style>
+
+<body>
+    <div class="box">
+
+    </div>
+	<div class="box">
+	
+	</div>
+</body>
+
+<script type="text/javascript">
+	
+	
+	var js = document.querySelectorAll(".box")
+	console.log(js)
+</script>
+</html>

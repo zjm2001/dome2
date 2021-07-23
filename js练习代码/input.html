@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #ipt1 {
+        width: 200px;
+        height: 30px;
+        margin-bottom: 10px;
+        margin-left: 100px;
+        margin-top: 100px;
+    }
+
+    #ipt2 {
+        width: 200px;
+        height: 30px;
+        margin-bottom: 10px;
+        margin-left: 100px;
+
+    }
+
+    #but {
+        width: 50px;
+        margin-bottom: 10px;
+        margin-left: 180px;
+        background-color: rgba(38, 154, 248, 0.644);
+        color: aliceblue;
+        border-radius: 12px;
+    }
+
+    div {
+        margin: 200px auto;
+        width: 400px;
+        height: 400px;
+        background-color: rgba(248, 202, 211, 0.479);
+
+    }
+</style>
+
+<body>
+    <div>
+        <input type="text" value="陈则梁大傻逼" id="ipt1"><br>
+        <input type="text" value="" id="ipt2"><br>
+        <input type="button" id="but" value="提交">
+    </div>
+</body>
+<script>
+    var ipt1 = document.querySelector("#ipt1");
+    var ipt2 = document.querySelector("#ipt2");
+    var but = document.querySelector("#but");
+    console.log
+    but.addEventListener("click", function () {
+        ipt2.value = ipt1.value;
+        ipt1.value = '';
+        ipt1.focus();
+
+    })
+</script>
+
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="../jquery-3.4.1.min.js"></script> 
+    <!--没用到 -->
+    <style>
+      div  img{
+            width: 100px;
+            height: 100px;
+            opacity: 50%;
+            transition: all 0.5s;
+        }
+    #tp{
+        width: 100px;
+        height: 100px;
+        border-radius:50%;
+        position: absolute;
+        transition: all 0.1s;
+    }
+     div{
+         width: 300px;
+         height: 220px;
+         /* background-color: rgb(245, 224, 247); */
+         position: absolute;
+         top: 700px;
+         left: 800px;
+     }  
+     #s{
+         position: absolute;
+         top: 20px;
+         left: 100px;
+     } 
+     #x{
+         position: absolute;
+         top: 110px;
+         left: 100px;
+     } 
+     #z{
+         position: absolute;
+         top: 110px;
+         
+     } 
+     #y{
+         position: absolute;
+         top: 110px;
+         left: 200px;
+     } 
+
+    </style>
+             <!-- 被移动图片 -->
+    <img src="./img/111.jpeg" alt="" id="tp">
+    
+              <!-- 装上下左右div -->
+    <div class="div01">
+        <img src="./img/上.png" alt="" id="s">
+        <img src="./img/下.png" alt=""  id="x">
+        <img src="./img/左.png" alt=""  id="z">
+        <img src="./img/右.png" alt=""  id="y">
+    </div>
+    <script>
+        var s =document.querySelector("#s");
+        var x =document.querySelector("#x");
+        var z =document.querySelector("#z");
+        var y =document.querySelector("#y");
+        var tp =document.querySelector('#tp');
+        var imgs =document.querySelector(".div01").querySelectorAll("img")//调用div01下面的所有img
+      
+
+        //四个图片分别控制上下左右
+        var a =0,b=0;
+        s.addEventListener("click",function(){
+            a-=50;//top向上是负
+            tp.style.top=a+'px'
+            tp.style.borderRadius=4+"PX"
+        })
+        x.addEventListener("click",function(){
+            a+=50//top向上是正
+           tp.style.top=a+'px'
+           tp.style.borderRadius=50+"%"
+        })
+        z.addEventListener("click",function(){
+            b-=50;//left向上是负
+           tp.style.left =b+'px'
+           tp.style.borderRadius=50+"%"
+           
+        })
+        y.addEventListener("click",function(){
+            b+=50;//left向上是正
+           tp.style.left=b+'px'
+           tp.style.borderRadius=4+"PX"
+        })
+
+
+        //控制透明度
+        for(var i=0;i<imgs.length;i++){
+            imgs[i].addEventListener('mouseover',function(){
+        this.style.opacity=100+'%';
+        })
+        }
+        for(var i=0;i<imgs.length;i++){
+            imgs[i].addEventListener('mouseout',function(){
+          this.style.opacity=50+'%';
+        })
+        }
+
+        // 键盘上下左右控制
+       document.addEventListener('keyup',function(e){
+           if(e.keyCode==38){
+               a-=50
+               tp.style.top=a+'px'
+           }else if(e.keyCode==40){
+               a+=50;
+               tp.style.top=a+'px'
+           }else if(e.keyCode==37){
+            b-=50;
+           tp.style.left =b+'px'
+           }else if(e.keyCode==39){
+            b+=50;
+           tp.style.left =b+'px'
+           }  
+       })
+        
+     
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .con {
+        width: 95%;
+        margin: auto;
+    }
+
+    nav {
+        width: 15%;
+        padding-left: 1%;
+        background-color: silver;
+        float: left;
+    }
+
+    main {
+        width: 80%;
+        float: left;
+    }
+
+    .pic {
+        width: 50%;
+        float: left;
+    }
+    @media screen and (max-width:640px){
+        nav{
+            width: 80%;
+            padding-left: 2%;
+            background: silver;
+            float: left;
+        }
+        .con nav ul li{
+            display: inline;
+        }
+        .pic{
+            float: none;
+        }
+    }
+    @media screen and(max-width:1200px) {
+        .pic{
+            float: none;
+            width: 60%;
+        }
+    }
+</style>
+
+<body>
+    <div class="con">
+        <nav>
+            <ul type='none'>导航
+                <li>主页</li>
+                <li>介绍</li>
+                <li>关于</li>
+                <li>联系我们</li>
+            </ul>
+        </nav>
+        <main>
+            <div class="pic"><img src="img/1_1280.jpg" alt=""
+                    srcset="img/1_1280.jpg 1280w,img/1_640.jpg 640w,img/1_320.jpg 320w"
+                    sizes="(min-width:1200px) calc(43vw),(max-width:640px) calc(80vw).60vw"
+                    ></div>
+            <div class="pic">
+                <img src="img/2_1280.jpg" alt=""
+                    srcset="img/2_1280.jpg 1280w,img/2_640.jpg 640w,img/2_320.jpg 320w"
+                    sizes="(min-width:1200px) calc(43vw),(max-width:640px) calc(80vw).60vw"
+                    >
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>

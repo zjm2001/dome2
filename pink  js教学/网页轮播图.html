@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    ul,
+    ol {
+        list-style: none;
+    }
+
+    .box {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 600px;
+        height: 400px;
+        margin: 100px auto;
+        overflow: hidden;
+    }
+
+    .wrop {
+        position: absolute;
+        width: 700%;
+        height: 400px;
+    }
+
+    .wrop li {
+        float: left;
+    }
+
+    .wrop img {
+        width: 600px;
+        height: 400px;
+    }
+
+    .dian {
+        display: none;
+    }
+
+    .dian a {
+        position: absolute;
+        font-size: 30px;
+        width: 50px;
+        height: 60px;
+        line-height: 60px;
+        text-align: center;
+        color: #fff;
+        background-color: rgba(255, 255, 255, 0.322);
+    }
+
+    .left {
+        top: 50%;
+        left: 0;
+    }
+
+    .right {
+        top: 50%;
+        right: 0;
+    }
+
+    .circle {
+        position: absolute;
+        height: 30px;
+        /* background-color: rgba(241, 187, 181, 0.534); */
+        bottom: 0;
+        left: 35%;
+    }
+
+    .circle li {
+        float: left;
+        width: 15px;
+        height: 15px;
+        border: 1px solid #fff;
+        border-radius: 50%;
+        margin: 10px 10px;
+    }
+
+    .red {
+        background-color: rgb(235, 107, 107);
+        border: 1px solid rgb(255, 60, 60) !important;
+    }
+</style>
+
+<body>
+    <div class="box">
+
+        <ul class="wrop">
+            <li> <img src="./img/1.jpg" alt=""> </li>
+            <li> <img src="./img/2.jpg" alt=""> </li>
+            <li> <img src="./img/3.jpg" alt=""> </li>
+            <li> <img src="./img/4.jpg" alt=""> </li>
+            <li> <img src="./img/5.jpg" alt=""> </li>
+        </ul>
+        <!-- 小箭头部分 -->
+        <div class="dian">
+            <a href="javascript:;" class="left">
+                < </a>
+                    <a href="javascript:;" class="right"> ></a>
+        </div>
+        <ol class="circle">
+
+        </ol>
+    </div>
+</body>
+<script>
+    // 动画函数
+    function adm(obj, target, callback) {
+        clearInterval(obj.time)//先清除定时器防止事件多次开辟定时器
+        obj.time = setInterval(function () {
+            //步长计算
+            var step = (target - obj.offsetLeft) / 10;
+            step = step > 0 ? Math.ceil(step) : Math.floor(step);
+            if (obj.offsetLeft == target) {
+                clearInterval(obj.time);
+                //定义回调函数放在停止定时器后面
+                callback&&callback()
+            } else {
+                obj.style.left = obj.offsetLeft + step + "px"
+            }
+
+        }, 15)
+    }
+    //   按钮变化函数
+    function fnk(){
+        for(var i =0;i<ol.children.length;i++){
+            ol.children[i].className = '';
+        }
+        ol.children[k].className = 'red';
+    }
+    var box = document.querySelector('.box');
+    var dian = document.querySelector('.dian');
+    var ul = document.querySelector('.wrop');
+    var ol = document.querySelector('.circle');
+    var right = document.querySelector('.right');
+    var left = document.querySelector('.left');
+    var k=0;
+    var imgWidth = box.offsetWidth;
+    for (var i = 0; i < ul.children.length; i++) {
+        // 创建li
+        var li = document.createElement('li');
+        //  记录索引号
+        li.setAttribute('index', i);
+        ol.appendChild(li);
+        li.addEventListener('click', function () {
+            for (var i = 0; i < ol.children.length; i++) {
+                ol.children[i].className = ''
+            }
+            var index = this.getAttribute('index')
+           num=k=index;//让三个小控制圆圈相同
+            this.className = 'red'
+            // 移动距离是li索引号x宽度
+            adm(ul, -index * imgWidth)
+        })
+    }
+    ol.children[0].className = 'red';
+    //  克隆第一张形成无缝滚动
+    var first = ul.children[0].cloneNode(true)
+    ul.appendChild(first);
+    var num = 0;
+    // 节流flag
+     var flag=true;
+
+    // 右边按钮
+    right.addEventListener('click', function () {
+           
+        if(flag){ 
+            // 执行一次改变为false等回调函数执行再返回true
+            flag=false;
+          if (num == ul.children.length - 1) {
+            ul.style.left = 0;
+            num = 0;
+        }
+        num++;
+        adm(ul,-num*imgWidth,function(){
+            flag=true;//回调函数执行完动画再改变节流的true让if通过
+        }); 
+         k++;
+        if(k==ol.children.length){
+            k=0;
+        }
+      fnk()
+    } 
+    })
+//    左边按钮
+    left.addEventListener('click', function () {
+        if(flag){
+            flag=false
+            if (num == 0) {
+            num=ul.children.length-1
+            ul.style.left = -num*imgWidth+"px";  
+        }
+        num--;
+        adm(ul,-num*imgWidth,function(){
+            flag=true
+        }); 
+         k--;
+        k= k<0? ol.children.length-1:k;
+       fnk() 
+        }
+       
+    })
+    // 定时播放功能
+    var timer=setInterval(function(){
+        right.click()
+    },2000)
+        // 显示与隐藏部分
+    box.addEventListener('mouseenter', function () {
+        dian.style.display = 'block';
+        clearInterval(timer)
+        timer=null;
+    })
+    box.addEventListener('mouseleave', function () {
+        dian.style.display = 'none';
+        timer=setInterval(function(){
+        right.click()
+    },2000)
+    })
+   
+</script>
+
+</html>

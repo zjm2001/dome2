@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        text-decoration: none;
+    }
+
+    #daohang {
+        background-color: rgb(253, 253, 253);
+        width: 1500px;
+        margin: auto;
+        position: relative;
+        height: 100px;
+    }
+
+    #div01 {
+        background: url(img/666.png);
+        width: 1920px;
+        height: 990px;
+        margin: auto;
+    }
+
+    #div02 {
+        width: 1200px;
+        height: 290px;
+        margin: auto;
+        position: relative;
+        top: 50px;
+        background-color: rgb(255, 255, 255);
+        border-radius: 20px;
+        padding: 40px;
+    }
+
+    #a01 {
+        display: inline-block;
+        border-radius: 20px;
+        text-align: center;
+        width: 200px;
+        height: 200px;
+        margin-top: 50px;
+        margin-left: 12%;
+        transition: all 0.35s;
+
+    }
+
+    .li01 {
+        float: left;
+        display: block;
+        font-size: 20px;
+        width: 15%;
+        margin-top: 1%;
+
+    }
+
+    .a {
+        background-color: cornflowerblue;
+
+    }
+
+    ul {
+        text-align: center;
+    }
+
+    button {
+        margin-top: 20px;
+        width: 100px;
+        font-size: 20px;
+        background-color: rgb(10, 142, 250);
+        color: rgb(255, 255, 255);
+        border-radius: 10%;
+        margin-right: 50px;
+    }
+
+    p {
+        font-size: 20px;
+        margin-top: 10px;
+    }
+</style>
+
+<body>
+
+    <div id="daohang">
+        <div style="float: left; padding-left:150px;"> <img src="./img/畅想.JPG" alt=""></div>
+        <ul>
+            <li class="li01"><a href="https://www.baidu.com"> 首页</a> </li>
+            <li class="li01"><a href="https://www.baidu.com"> 产品</a> </li>
+            <li class="li01"> <a href="https://www.baidu.com"> 产品试用</a></li>
+        </ul>
+        <div style="float: right;"><button>登录</button> &nbsp; &nbsp;<button>旧版入口</button></div>
+    </div>
+
+    <div id="div01">
+        <div id="div02">
+            <a href="" id="a01" class=""> <img src="./img/big1.png" alt="">
+                <p>学生</p>
+            </a>
+            <a href="" id="a01" class=""> <img src="./img/big2.png" alt="">
+                <p>教师 </p>
+            </a>
+            <a href="" id="a01" class=""> <img src="./img/big3.png" alt="">
+                <p>专家</p>
+            </a>
+        </div>
+
+    </div>
+    <script>
+        // var ids=document.querySelector('#a01');
+        var as = document.querySelector('#div02 ').querySelectorAll('a');
+        // var ps =document.querySelector('#div02').querySelectorAll('p')
+        // console.log(ps);
+        // console.log(as);
+        //    for( var i=0;i<as.length;i++){
+        //        as[i].onmouseover=function(){
+        //         this.className='a';
+        //        }
+        //    }
+        //    for( var i=0;i<as.length;i++){
+        //        as[i].onmouseout=function(){
+        //         this.className='';
+        //        }
+        //    }
+        for (var i = 0; i < as.length; i++) {
+            as[i].onmouseover = function () {
+                this.style.backgroundColor = 'cornflowerblue';
+                this.style.color = '#ff0000';
+            }
+            as[i].onmouseout = function () {
+                this.style.backgroundColor = '';
+                this.style.color = '';
+            }
+
+        }
+// for( var j=0;j<ps.length;j++){
+//   as[i].onmouseover=function(){
+//         this.style. color='#ff0000';
+
+//     }
+//  as[i].onmouseout=function(){
+//         this.style. color='';
+//     }
+// }
+    </script>
+</body>
+
+</html>

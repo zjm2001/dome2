@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+自增++
+    通过自增可以使变量自身基础上增加一
+    对于变量自增后，原变量立即自增一
+    自增分两种后++  a++
+              前++ ++a
+              无论是前++还是后++都会立即使原变量的值自增一
+         不同的a++和++a的值不同
+         a++的值等于原变量的值（自增前）
+          ++a的值等于自增后的值
+          自减--
+          通过自减可以将自身减1
+          -自减分两种后--  a--
+              前-- ---a（性质与自增类似）
+        */ 
+       var a =1;
+       a=a+1;//2 
+       a++;
+       //d++ + ++d + d；//20+22+22
+      console.log(a++);//1
+      console.log(++a);//2
+
+
+       console.log("a="+a );
+    </script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+div {
+  background-color: pink;
+  width: 200px;
+  height: 200px;
+}
+div p {
+  background-color: blue;
+  color: pink;
+}
+div p:nth-child(2) {
+  color: red;
+}

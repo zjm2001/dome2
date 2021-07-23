@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    h1 {
+        text-align: center;
+    }
+
+    button {
+        width: 100px;
+        height: 50px;
+        font-size: 20px;
+        background-color: rgb(97, 187, 247);
+        color: #fff;
+        display: block;
+        margin: 0 auto;
+        outline: none;
+        border-radius: 12px;
+    }
+</style>
+
+<body>
+    <h1></h1>
+    <button>开始计时</button>
+    <script>
+        var hs = document.querySelector('h1');
+        var btn = document.querySelector("button");
+        var i = 0;
+        console.log(btn)
+        console.log(hs);
+
+        btn.addEventListener('click', function () {
+
+            setInterval(function () {
+                if (i <= 60) {
+                    hs.innerHTML = "开始计时"+i + "秒";
+                    i++;
+
+                } else {
+                    hs.innerHTML = '时间到';
+                }
+            }, 1000)
+        }
+        )
+        // function time (){
+        //    if(i<=60){
+        //        hs.innerHTML=i;
+        //        i++
+        //    }else{
+        //        hs.innerHTML="jiesh";
+        //    }
+        // }
+      
+        // setInterval(time(),1000);
+        // time()
+        // time()
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .box {
+        margin: 100px auto;
+        width: 400px;
+        height: 300px;
+     
+
+    }
+
+    .xs {
+        display: none;
+        width: 400px;
+        height: 80px;
+        line-height: 80px;
+        font-size: 26px;
+        margin-bottom: 20px;
+        border: 1px solid black;
+        border-left: 0;
+        border-right: 0;
+    }
+    input{
+        box-sizing: border-box;
+        width: 400px;
+        font-size: 20px;
+        padding:5px 10px ;
+    }
+</style>
+
+<body>
+
+
+    <div class="box">
+        <div class="xs"></div>
+        <input type="text" placeholder="输入内容">
+    </div>
+
+</body>
+<script>
+    var inp=document.querySelector('input');
+    var xs=document.querySelector('.xs');
+    console.log(xs);
+    console.log(inp);
+
+inp.addEventListener('keyup',function(){
+    xs.innerHTML=this.value;
+    if(this.value==""){
+        xs.style.display='none';
+    }else{
+        xs.style.display='block';
+        xs.innerHTML=this.value;
+    }
+})
+inp.addEventListener('blur',function(){
+    xs.style.display='none';
+})
+inp.addEventListener('focus',function(){
+    if(this.value==''){
+        xs.style.display='none';
+    }else{
+        xs.style.display='block';
+        xs.innerHTML=this.value;
+    }
+})
+
+
+</script>
+
+</html>

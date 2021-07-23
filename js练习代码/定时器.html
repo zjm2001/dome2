@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>五秒发送短信</title>
+</head>
+<style>
+    button{
+        width: 150px;
+        height:30px;
+     color: cornflowerblue;
+    }
+</style>
+<body>
+   <input type="text" placeholder="沙雕滴滴啦啦啦" >
+   <button >发送短信</button>
+</body>
+<script>
+ 
+    var int =document.querySelector("input");
+    var btn=document.querySelector('button');
+    btn.onclick =function  (){   
+     btn.disabled=true;
+    int.value = "";
+     var i=5;
+     setInterval( function() {if(i>=0){
+     btn.textContent=i;
+     i--;
+    }
+    else{
+        btn.textContent="发送短信";
+        btn.disabled = false;
+    }
+    }
+    ,1000)
+    }
+</script>
+</html>

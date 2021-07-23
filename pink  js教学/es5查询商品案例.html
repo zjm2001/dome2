@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../bootstrap/bootstrap/css/bootstrap.min.css">
+</head>
+<style>
+    h4 {
+        text-align: center;
+    }
+
+    input {
+        width: 100px;
+    }
+
+    th,
+    td {
+        font-size: 20px;
+        text-align: center;
+    }
+</style>
+
+<body>
+    <h4>
+        按照价格查询
+        <input type="text" class="start">---<input type="text" class="end">
+        <button class="search-Price">搜索</button>
+        按照商品名称查询:
+        <input type="text" class="commodity">
+        <button class="search-name">查询</button>
+    </h4>
+
+    <table class="table table-bordered ">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>商品名称</th>
+                <th>价格</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+</body>
+<script>
+    var date = [
+        {
+            id: 1,
+            name: "小米11pro",
+            Price: 3999
+
+        },
+        {
+            id: 2,
+            name: "小米10pro",
+            Price: 2000
+
+        },
+        {
+            id: 3,
+            name: "iPhone12",
+            Price: 6000
+
+        },
+        {
+            id: 4,
+            name: "华为",
+            Price: 2799
+
+        },
+        {
+            id: 5,
+            name: "红米k40",
+            Price: 1999
+
+        },
+        {
+            id: 6,
+            name: "小米mix",
+            Price: 2599
+
+        },
+        {
+            id: 7,
+            name: "荣耀",
+            Price: 999
+
+        }, {
+            id: 8,
+            name: "小米11",
+            Price: 2999
+
+        },
+        {
+            id: 9,
+            name: "oppo",
+            Price: 1500
+
+        },
+        {
+            id: 10,
+            name: "小米8",
+            Price: 1999
+
+        },
+
+    ]
+    
+    var tbody = document.querySelector('tbody');
+    var start = document.querySelector('.start');
+    var end = document.querySelector('.end');
+    var commodity = document.querySelector('.commodity');
+    var btn1 = document.querySelector('.search-Price');
+    var btn2 = document.querySelector('.search-name');
+    getDate(date);
+function getDate(mydate){
+    tbody.innerHTML=''
+ mydate.forEach(function (value) {
+        var tr = document.createElement('tr');
+        tr.innerHTML = '<td>' + value.id + '</td><td>' + value.name + '</td><td>' + value.Price + "¥" + '</td>'
+        tbody.appendChild(tr);
+    })
+}
+   
+    btn1.addEventListener('click',function(){
+        var newdate=date.filter(function(value){
+            return value.Price>=start.value && value.Price<=end.value
+        })
+        // console.log(newdate);
+        getDate(newdate);
+    })
+    btn2.addEventListener('click',function(){
+        var arr=[];
+        date.some(function(value){
+            if(value.name===commodity.value){
+               arr.push(value);
+               return true; 
+            }
+        })
+        getDate(arr);
+
+    })
+</script>
+
+</html>

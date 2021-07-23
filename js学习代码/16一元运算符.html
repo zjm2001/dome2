@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+一元运算符，只需要一个操作数
++正号
+—正号不会对数字产生影响
+-负号
+对数字进行取反，对非number值，先转化为number值再取反
+可以对一个其他数据类型使用+来将其转化为number
+它的原理喝Number()函数一样
+
+
+        */ 
+
+var a =123;
+a =-a;//-123
+a =true;
+a =-a;//-1
+a="18";
+a=+a;
+console.log(a);
+console.log(typeof a);
+
+var b=1+"2"+3;//6
+console.log(b);
+    </script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .box{
+        margin: 100px auto;
+        width: 800px;
+        height: 300px;
+    }
+    ul{
+        list-style: none;
+        height: 50px;
+        background-color: rgb(236, 233, 233);
+    }
+    ul li{
+        cursor :pointer;
+        line-height: 50px;
+        height: 50px;
+        float: left;
+        padding: 0px 20px;
+    }
+    .item{
+        display: none;
+    }
+    .red{
+        background-color: rgb(218, 13, 13);
+        color: rgb(236, 233, 233);
+    }
+</style>
+
+<body>
+    <div class="box">
+        <div class="tab">
+            <ul>
+                <li class="red">商品界面</li>
+                <li>介绍界面</li>
+                <li>详情界面</li>
+                <li>售后界面</li>
+                <li>手机</li>
+            </ul>
+        </div>
+        <div class="tab_con">
+            <div class="item" style="display: block;">商品界面</div>
+            <div  class="item">介绍界面</div>
+            <div  class="item">详情界面</div>
+            <div  class="item">售后界面</div>
+            <div  class="item">手机</div>
+        </div>
+    </div>
+    <script>
+        var lis=document.querySelectorAll('li');
+        var divs=document.querySelector('.tab_con').querySelectorAll("div")
+        for(var i=0; i<lis.length;i++){
+            lis[i].setAttribute('index',i);
+            lis[i].onclick=function(){
+                for(var i=0; i<lis.length;i++){
+                    lis[i].className=''
+                }
+                this.className='red';
+                var index=this.getAttribute('index');
+                for(var i=0;i<divs.length;i++){
+                    divs[i].style.display='none'
+                }
+                  divs[index].style.display='block';
+              
+            }
+        }
+    </script>
+</body>
+</html>

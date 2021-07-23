@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .w {
+        width: 1200px;
+        margin: 10px auto;
+    }
+
+    .side {
+        position: absolute;
+        top: 352px;
+        right: 300px;
+        width: 50px;
+        height: 100px;
+        background-color: darkgoldenrod;
+        z-index: 999;
+    }
+
+    .top {
+        height: 300px;
+        background-color: blue;
+    }
+
+    .banner {
+        height: 350px;
+        background-color: cornflowerblue;
+    }
+
+    .main {
+        height: 1000px;
+        background-color: crimson;
+    }
+
+    .goby {
+        display: none;
+        position: absolute;
+        bottom: 0;
+    }
+</style>
+
+<body>
+   
+    <div class="side">
+        <span class="goby"> 返回顶部</span>
+    </div>
+    <div class="top w"> top</div>
+    <div class="banner w">banner</div>
+    <div class="main w">main</div>
+</body>
+<script>
+        function adm(obj, target, callback) {
+        clearInterval(obj.time)//先清除定时器防止事件多次开辟定时器
+        obj.time = setInterval(function () {
+            //步长计算
+            var step = (target - window.pageYOffset) / 10;
+            step = step > 0 ? Math.ceil(step) : Math.floor(step);
+            if (window.pageYOffset == target) {
+                clearInterval(obj.time);
+                //定义回调函数放在停止定时器后面
+                if (callback) {
+                    callback()
+                }
+
+            } else {
+                // obj.style.left = window.pageYOffset + step ;
+                   window.scroll(0, window.pageYOffset + step)   
+            }
+
+        }, 15)
+    }
+    var top=document.querySelector('.top')
+    var side=document.querySelector('.side');
+    var banner=document.querySelector('.banner')
+    var main=document.querySelector('.main')
+    var goby=document.querySelector('.goby')
+    var bannertop=banner.offsetTop;
+    var maintop=main.offsetTop
+    
+    // console.log(side.offsetTop);
+    var  sidetop=side.offsetTop-bannertop;
+    // console.log(bannertop);
+    document.addEventListener('scroll',function() {
+           if(window.pageYOffset>bannertop){
+               side.style.position='fixed';
+               side.style.top=sidetop+'px';
+
+           }else{
+            side.style.position='absolute';
+            side.style.top='352px';
+           }
+           if(window.pageYOffset>maintop){
+               goby.style.display='block';
+
+           }else{
+            goby.style.display='none';
+           }
+    })
+    goby.addEventListener('click',function(){
+    adm(window,0)  
+    })
+    
+</script>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function conutDouw(time) {
+            var newDate = +new Date();
+            var inputDate = +new Date(time);
+            var times = (inputDate - newDate) / 1000
+            var d =parseInt(times/60/60/24);//天
+            d = d < 10 ? "0" + d : d;
+            var h=parseInt(times/60/60%24);//时
+            h = h < 10 ? "0" + h : h;
+            var m=parseInt(times/60%60);//分
+            m = m < 10 ? "0" + m : m;
+            var s=parseInt(times%60);//当前秒
+            s = s < 10 ? "0" + s : s;
+            return d+'天'+h+"时"+m+"分"+s+"秒";
+        }
+        console.log( conutDouw('2021-5-14 12:00:00'));
+    </script>
+</body>
+
+</html>

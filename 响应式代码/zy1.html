@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = [3, 4, 5, 43, 2, 56, 7];
+        var i=[2,0,6,1,77,0,52,0,25,7];
+
+function Sort(arr) {
+    for (var i = 0; i < arr.length; i++) {
+        var flag = 1;
+        for (var j = 0; j <= arr.length - 1 - i; j++) {
+            if (arr[j] > arr[j + 1]) {
+                var tmp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = tmp;
+                flag = 0;
+            }
+        }
+        if (flag == 1) {
+            break;
+        }
+    }
+}
+Sort(arr);
+Sort(i);
+console.log(arr);
+console.log(i);
+    </script>
+</body>
+</html>

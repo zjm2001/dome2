@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+   * {
+        margin:0;
+        padding: 0;
+        list-style: none;
+        text-decoration: none;
+    }
+    #div01{
+        width: 500px;
+     height: 40px;
+     background: rgb(87, 175, 247);
+     margin: 0 auto;
+    }
+    #div02 img{
+        transition: all .6s;
+    }
+    #ul01{
+        background: rgb(123, 178, 223)
+    }
+    #li01{
+        float:left;
+        display:block;
+        height: 40px;
+        line-height: 40px;
+        padding: 0 20px;
+        position: relative;
+        text-align: center; 
+    }
+    #li01:hover{
+        background: rgb(168, 230, 107);
+    }
+    #li02{
+        float: none;
+        
+    }
+    #ul02{
+       position: absolute;
+        top:40px;
+        left: 20px;
+        display: none;
+    }
+    #li02:hover{
+        background: rgb(75, 219, 152);
+    }
+    #li01:hover #ul02{
+        display: block;
+    }
+    #div02{
+        widows: 1800px;
+     height:500px;
+     /* background: rgb(250, 251, 252); */
+     margin: 0px auto;
+     border-radius: 100px;
+     }
+     #div03{
+        width: 1800px;
+     height:300px;
+     background: rgb(120, 181, 243);
+     margin: 0px auto;
+     border-radius: 100px;
+     text-align: center;
+     font-size: 20px;
+     }
+     #img01{
+        border-radius: 120%; 
+        border: solid 5px rebeccapurple;
+        transition: all 1s;
+     }
+</style>
+<body background="./img/4.jpg">
+    <div id="div01">
+        <ul id="ul01">
+            <li id="li01"><a href="" ></a>鸣人</a>
+            <ul id="ul02">
+                <li id="li02">技能</li>
+                <li id="li02">背景</li>
+                <li id="li02">人物</li>
+            </ul>
+            </li>
+            <li id="li01"><a href="http://www.baidu.com" target="_blank" >卡卡西</a></li>
+            <li id="li01"><a href="http://www.baidu.com" target="_blank" >佐助</a></li>
+            <li id="li01"><a href="http://www.baidu.com" target="_blank" >自来也</a></li>
+            <li id="li01"><a href="http://www.baidu.com" target="_blank" >带土</a></li>
+            <li id="li01"><a href="http://www.baidu.com" target="_blank" >博人</a></li>
+        </ul>
+    </div>
+    <br><br><br>
+    <br><br><br>
+    <div id="div02">
+    <span> <img  src="./img/6.jpg" alt=""    width="300px" height="500px" id="img01" class="img1">       </span>
+    <span> <img src="./img/7.jpg" alt=""    width="300px" height="500px" id="img01"  class="img2">       </span>
+    <span>  <img src="./img/8.jpg" alt=""    width="300px" height="500px" id="img01" class="img3">       </span>
+    <span>   <img src="./img/11.jpg" alt=""    width="300px" height="500px" id="img01" class="img4">      </span>
+    <span>   <img src="./img/9.jpg" alt=""    width="300px" height="500px" id="img01" class="img5">      </span>
+    <span>    <img src="./img/10.jpg" alt=""    width="300px" height="500px" id="img01" class="img6">     </span>
+    </div>  
+    <div id="div03">
+        <h1>火影忍者</h1>
+        火影忍者是日本漫画家岸本齐史的代表作，作品于1999年开始在《周刊少年JUMP》上连载，<br>
+        于2014年11月10日发售的JUMP第50号完结；后日谈性质的外传漫画《火影忍者外传：第七代火影与绯色花月》<br>
+        则于同杂志2015年第22、23合并号开始短期连载，至同年第32号完结。<br>
+        故事成功地将原本隐藏在黑暗中，用世界上最强大的毅力和最艰辛的努力去做最密不可宣和隐讳残酷的事情的忍者，<br>
+        描绘成了太阳下最值得骄傲最光明无限的职业。在岸本齐史笔下的忍者世界中，每一位年轻的忍者都在开拓着属于自己的忍道。<br>
+    </div>
+    <script>
+      var img1=document.querySelector(".img1");
+        var img2=document.querySelector(".img2");
+        var img3=document.querySelector(".img3");
+        var img4=document.querySelector(".img4");
+        var img5=document.querySelector(".img5");
+        var img6=document.querySelector(".img6");
+        var a=1;
+        img1.onmouseover=function(){
+            if(a){
+            img1.style.transform="translate(0px,-100px)";
+            a=0;
+         }else{
+            img1.style.transform="translate(0px,0px)";
+            a=1;
+         }
+        }
+        img2.onmouseover=function(){
+            if(a){
+            img2.style.transform="translate(0px,-100px)";
+            a=0;
+         }else{
+            img2.style.transform="translate(0px,0px)";
+            a=1;
+         }
+        }
+        img3.onmouseover=function(){
+            if(a){
+            img3.style.transform="translate(0px,-100px)";
+            a=0;
+         }else{
+            img3.style.transform="translate(0px,0px)";
+            a=1;
+         }
+        }
+        img4.onmouseover=function(){
+            if(a){
+            img4.style.transform="translate(0px,-100px)";
+            a=0;
+         }else{
+            img4.style.transform="translate(0px,0px)";
+            a=1;
+         }
+        }
+        img5.onmouseover=function(){
+            if(a){
+            img5.style.transform="translate(0px,-100px)";
+            a=0;
+         }else{
+            img5.style.transform="translate(0px,0px)";
+            a=1;
+         }
+        }
+        img6.onmouseover=function(){
+            if(a){
+            img6.style.transform="translate(0px,-100px)";
+            a=0;
+         }else{
+            img6.style.transform="translate(0px,0px)";
+            a=1;
+         }
+        }
+    </script>
+</body>
+</html>

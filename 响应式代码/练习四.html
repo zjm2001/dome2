@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .con{
+        width: 80%;
+        margin: auto;
+    }
+    nav{
+        background: silver;
+        width: 100%;
+    }
+    main{
+        width: 80%;
+        background: lightblue;
+        float: left;
+    }
+    aside{
+        width: 18%;
+        padding-left: 2%;
+        float: left;
+        background: yellow;
+    }
+    @media screen and (max-width:480px){
+        main{
+            width: 100%;
+        }
+        aside{
+            width: 100%;
+            padding-left: 0;
+        }
+        
+    }
+    @media screen and(min-width:769px) {
+        nav{
+            width: 30%;
+            float: left;
+        }
+        main{
+            width: 60%;
+            float: left;
+        }
+        aside{
+            width: 9%;
+            padding-left: 1%;
+        }
+        
+    }
+</style>
+<body>
+    <div class="con">
+        <nav>导航</nav>
+        <main>内容</main>
+        <aside>侧边</aside>
+    </div>
+ 
+</body>
+</html>

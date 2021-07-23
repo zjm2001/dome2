@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //起步价13  (3公里内)之后每多一公里加5元拥堵后加10元
+        function cat() {
+            var start = 13;//起步价
+            var total = 0;//总计
+            return {
+                price: function (n) {
+                    if (n <= 3) {
+                        total = start;
+                    } else {
+                        total = start + (n - 3) * 5;
+                    }
+                    return total;
+                },
+                yd: function (key) {
+                    return key ? total + 10 : total;
+
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

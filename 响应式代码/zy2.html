@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+       function backDay(){
+            var year = prompt('输入年份：');
+            if(runnian(year)){ //调用runnian()函数，返回值为true或者false，根据不同返回值弹窗。
+                alert('你输入的是闰年二月份有29天');
+            }else{
+                alert('你输入的是平年二月份有28天')
+            }
+        }
+        backDay(); //输出函数
+        function runnian(year2){
+            var flag=false;
+            if(year2 %4==0 && year2 %100 !=0||year2 % 400 ==0){
+                flag = true;
+            }
+            return flag; //返回值
+        }
+
+    </script>
+</body>
+
+</html>

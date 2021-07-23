@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>248</title>
+</head>
+<style>
+    .box {
+        width: 1800px;
+        height: 600px;
+        margin: 100px auto;
+        /* background-color: pink; */
+    }
+
+    .tp {
+        
+        float: left;
+        width: 300px;
+        height: 400px;
+        margin-right: 10px;
+        position: relative;
+        cursor: pointer;
+        border: 1px solid blue;
+
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .tp::before {
+        content: '';
+        position: absolute;
+        width:300px;
+        height: 400px;
+        background: rgba(0, 0, 0, 0.3);
+        display: none;
+        transition: all 1s;   
+
+    }
+
+    .tp:hover::before {
+        display: block;
+    }
+</style>
+
+<body>
+    <div class="box">
+        <div class="tp"><img src="img/9.jpg" alt=""></div>
+        <div class="tp"><img src="img/6.jpg" alt=""></div>
+        <div class="tp"><img src="img/7.jpg" alt=""></div>
+        <div class="tp"><img src="img/8.jpg" alt=""></div>
+    </div>
+
+</body>
+
+</html>

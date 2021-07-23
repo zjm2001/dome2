@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        .com {
+            display: flex;
+            width: 200px;
+            height: 200px;
+            margin-top: 10px;
+            background-color: pink;
+        }
+
+        .dian {
+            margin: 5px 5px;
+            background-color: purple;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        .a {
+            justify-content: center;
+            align-items: center;
+        }
+
+        .b {
+            justify-content: space-between;
+        }
+
+        .b1 {
+            align-self: flex-end;
+        }
+
+        .c {
+            justify-content: space-between;
+        }
+
+        .c1 {
+            align-self: center;
+        }
+
+        .c2 {
+            align-self: flex-end;
+        }
+
+        .d {
+            flex-wrap: wrap;
+            align-content: space-between;
+        }
+
+        .d1 {
+            margin-right: 100px;
+        }
+
+        .e {
+            flex-wrap: wrap;
+            align-content: space-between;
+        }
+
+        .e1 {
+            margin-right: 100px;
+        }
+
+        .e2 {
+            margin: 0 80px;
+
+        }
+
+        .f {
+            flex-wrap: wrap;
+            align-content: space-between;
+            justify-content: space-between;
+        }
+
+        .f .dian {
+            margin: 20px 10px;
+        }
+    </style>
+
+    <div class="com a">
+        <span class="dian"></span>
+    </div>
+
+    <div class="com b">
+        <span class="dian"></span>
+        <span class="dian b1"></span>
+    </div>
+    <div class="com c">
+        <span class="dian"></span>
+        <span class="dian c1"></span>
+        <span class="dian c2"></span>
+    </div>
+    <div class="com d">
+        <span class="dian d1"></span>
+        <span class="dian"></span>
+        <span class="dian d1"></span>
+        <span class="dian"></span>
+    </div>
+    <div class="com e">
+        <span class="dian e1"></span>
+        <span class="dian "></span>
+        <span class="dian  e2"></span>
+        <span class="dian  e1"></span>
+        <span class="dian "></span>
+    </div>
+    <div class="com f">
+        <span class="dian"></span>
+        <span class="dian"></span>
+        <span class="dian"></span>
+        <span class="dian"></span>
+        <span class="dian"></span>
+        <span class="dian"></span>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        将其他数据类型转化为Nuber
+        方法一
+        使用Number()函数
+        -字符串转数字
+        1.如果是纯数字的字符串，直接转化为数字
+        2.如果字符串中有非法数字内容，则转化为NaN
+        3.如果字符串是一个空串或者是全是空格则转化为0
+        -布尔转数字
+        true转化为1
+        false转化为0
+        -Null转化为数字0
+        -undefined转化到数字NaN
+        转化方式二
+        -专门对付字符串
+        -parseInt()吧一个字符转化为一个整数
+        -parseFloata()吧一个字符串转化为一个浮点数
+
+        */
+        var  a =123;
+        a= Number(a);
+      a="123px";
+      a=parseInt(a);//parseInt()可以将一个字符串中有效整数内容读出来
+     //读取整数；
+     a=123.456;
+     parseFloat(a);//可以获取不同的有效小数；
+
+        console.log(typeof a);
+        console.log(a);
+
+    </script>
+</body>
+</html>

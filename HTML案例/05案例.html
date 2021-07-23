@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    a{
+        text-decoration: none;
+    }
+    div{
+        width: 1000px;
+        height: 60px;
+        margin: 0 auto;
+        font-size: 20px;
+        color: rgb(167, 27, 62);
+        /* position: absolute;       固定div位置 */        
+    }
+   #ul01{
+        width: 1000px;
+       height: 60px;
+         list-style: none;      /* 消除点 */
+      
+    }
+    #li01{
+        float: left;
+        width: 33%;
+        position: relative;
+        text-align: center;        /*让li中文字居中*/
+        
+    }
+    #ul02{
+        list-style: none;              /* 消除点 */
+        /* position: absolute; */
+        top: 40px;
+        left: 458px;
+       /* display: none; */
+    }
+
+    #li02{
+        display: none;                 /* 隐藏文字二级 */
+    }
+    #lio1:hover #ul02{
+        display: block;
+    }
+</style>
+<body  background="./img/4.jpg">
+    <div>
+        <ul id="ul01">
+            <li id="li01"><a href="" ></a>鸣人</a>
+            <ul id="ul02">
+                <li id="li02">技能</li>
+                <li id="li02">背景</li>
+                <li id="li02">人物</li>
+            </ul>
+            </li>
+            <li id="li01"><a href="http://www.baidu.com" target="_blank" >卡卡西</a></li>
+            <li id="li01"><a href="http://www.baidu.com" target="_blank" >佐助</a></li>
+        </ul>
+    </div>
+
+</body>
+</html>

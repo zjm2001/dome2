@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    nav{
+        float: left;
+        width: 50px;
+        height: 200px;
+        line-height: 200px;
+        text-align: center;
+        margin-left: 50px;
+        font-size: 40px;
+    }
+    .box{
+        margin: 100px auto;
+        width: 1000px;
+        height: 400px;
+    }
+    span{
+        float: left;
+        display: block;
+        width: 200px;
+        height: 200px;
+        line-height: 200px;
+        background-color: #ccc;
+ 
+
+    }
+    h1 {
+        text-align: center;
+    }
+</style>
+
+<body>
+    <div class="box">
+    <h1>
+        <span></span>
+        <nav>:</nav>
+        <span></span>
+        <nav>:</nav>
+        <span></span>
+    </h1>
+</div>
+    <script>
+        // var spans = document.querySelector('h1').querySelectorAll("span");
+        // console.log(spans);
+        function time() {
+            var spans = document.querySelector('h1').querySelectorAll("span");
+            var h = 14;
+            var m = 4;
+            var s = 0;
+            setInterval(function () {
+                if (s <= 60) {
+                    spans[2].innerHTML = s;
+                    spans[1].innerHTML = m ;
+                    spans[0].innerHTML = h ;
+
+                    s++;
+                } else {
+                    s = 0;
+                    if (m <= 60) {
+                        spans[1].innerHTML = m 
+                        m++;
+
+                    } else {
+                        m = 0;
+                        spans[0].innerHTML = h +
+                        h++;
+                    }
+
+                }
+            }, 1000)
+        }
+        time();
+    </script>
+</body>
+
+</html>

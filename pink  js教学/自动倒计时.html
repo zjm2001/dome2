@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div {
+        width: 700px;
+        height: 300px;
+        margin: 100px auto;
+    }
+
+    span {
+        display: inline-block;
+        width: 200px;
+        height: 200px;
+        line-height: 200px;
+        text-align: center;
+        margin: 100px auto;
+        background-color: black;
+        color: #fff;
+        font-size: 26px;
+    }
+</style>
+
+<body>
+    <div>
+        <span class="h">1</span>
+        <span class="m">1</span>
+        <span class="s">1</span>
+    </div>
+</body>
+<script>
+    var hs = document.querySelector('.h')
+    var ms = document.querySelector('.m')
+    var ss = document.querySelector('.s')
+    var inputDate = +new Date('2021-6-1 12:00:00');
+    conutDouw();
+    function conutDouw() {
+        var newDate = +new Date();
+        var times = (inputDate - newDate) / 1000
+        var h = parseInt(times / 60 / 60 % 24);//时
+        h = h < 10 ? "0" + h : h;
+        hs.innerHTML=h
+        var m = parseInt(times / 60 % 60);//分
+        m = m < 10 ? "0" + m : m;
+        ms.innerHTML=m
+        var s = parseInt(times % 60);//当前秒
+        s = s < 10 ? "0" + s : s;
+        ss.innerHTML=s;
+    }
+    setInterval(conutDouw,1000)
+</script>
+
+</html>

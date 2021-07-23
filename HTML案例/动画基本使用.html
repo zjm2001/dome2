@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    @keyframes move{
+        0%{
+            transform: translate(0px,0px);
+        }
+      25%{
+           transform: translate(1000px,0px);
+       } 
+     50%{
+           transform: translate(1000px,300px);
+       }
+       75%{
+        transform: translate(0px,300px);
+       }
+       100%{
+        transform: translate(0px,0px);
+       }
+    }
+    .box
+    {
+        text-align: center;
+        line-height: 200px;
+        font-size: 30px;
+        width: 200px;
+        height: 200px;
+        /* background-color: lightblue; */
+        /* 动画名称 */
+        animation-name:move;
+        /* 动画时间 */
+        animation-duration: 5s;
+        /* 运动曲线 */
+        animation-timing-function:ease ;
+        /* 规定何时开始 */
+        animation-delay: 0;
+        /* 重复次数  infinite无限 */
+        animation-iteration-count: infinite;
+        /* 是否反方向播放  alternate反方向 normal 默认   */
+       animation-direction: alternate;
+       /* 动画结束状态 默认backwards回来 forwards 保持 */
+       animation-fill-mode: backwards;
+       /* 播放状态  默认播放 running  暂停paused*/
+       animation-play-state:running;
+    }
+</style>
+<body>
+    <div class="box">
+笨比
+    </div>
+</body>
+</html>

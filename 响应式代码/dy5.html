@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    td {
+        width: 200px;
+        height: 40px;
+        text-align: center;
+        border: 1px solid rgb(133, 130, 130);
+
+    }
+
+    table tr:nth-child(1) {
+        background-color: pink;
+    }
+
+    table tr:nth-child(n+2) {
+        background-color: cadetblue;
+    }
+</style>
+
+<body>
+    <table cellspacing=0>
+        <tr>
+            <td>
+                <input type="checkbox" name="hh" id="dd">
+                全选
+            </td>
+            <td>商品</td>
+            <td>价格</td>
+        </tr>
+
+
+        <tr>
+            <td> <input type="checkbox" name="hh" id="dd"></td>
+            <td>苹果1000</td>
+            <td>9999</td>
+        </tr>
+
+        <tr>
+            <td> <input type="checkbox" name="hh" id="dd"></td>
+            <td>苹果2154</td>
+            <td>5999</td>
+        </tr>
+
+        <tr>
+            <td> <input type="checkbox" name="hh" id="dd"></td>
+            <td>小米12</td>
+            <td>1999</td>
+        </tr>
+
+        <tr>
+            <td> <input type="checkbox" name="hh" id="dd"></td>
+            <td>小米11</td>
+            <td>3999</td>
+        </tr>
+    </table>
+    <script>
+        var ipts = document.querySelectorAll("input");
+        console.log(ipts);
+        for (var i = 0; i < ipts.length; i++) {
+
+            ipts[0].addEventListener("click", function () {
+                for (var j = 1; j < ipts.length; j++) {
+                    ipts[j].checked = this.checked;
+                }
+            })
+            for (var j = 1; j < ipts.length; j++) {
+                ipts[j].addEventListener("click", function () {
+                    if(this.checked==false){
+                        ipts[0].checked=false;
+                    }
+                    // else if(!ipts[j].checked){
+                    //     ipts[0].checked=true;
+                    // }
+                })
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>

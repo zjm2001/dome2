@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div01">
+        <img src="./img/上.png" alt="" class="one">
+        <img src="./img/下.png" alt="">
+        <img src="./img/左.png" alt="">
+        <img src="./img/右.png" alt="">
+    </div>
+    <script>
+        var imgs =document.querySelector('#div01').querySelectorAll('img');
+        var one =document.querySelector(".one")
+        console.log(imgs);
+        for (var i = 0; i < imgs.length; i++) {
+                imgs[i].addEventListener('click',function(){
+                this.style.width=300+'px';
+                this.style.backgroundColor='red';   
+            })  
+        }
+ 
+    </script>
+</body>
+</html>
